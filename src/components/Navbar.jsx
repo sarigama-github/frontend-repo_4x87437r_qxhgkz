@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Menu, X, Bird } from 'lucide-react'
+import ScrollLink from './ScrollLink'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -25,13 +26,13 @@ function Navbar() {
 
             <nav className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
-                <a key={item.href} href={item.href} className="text-sm text-white/80 hover:text-white transition-colors">
+                <ScrollLink key={item.href} href={item.href} className="text-sm text-white/80 hover:text-white transition-colors">
                   {item.label}
-                </a>
+                </ScrollLink>
               ))}
-              <a href="#contact" className="inline-flex items-center rounded-xl bg-white text-slate-900 px-4 py-2 text-sm font-semibold shadow hover:bg-blue-50 transition-colors">
+              <ScrollLink href="#contact" className="inline-flex items-center rounded-xl bg-white text-slate-900 px-4 py-2 text-sm font-semibold shadow hover:bg-blue-50 transition-colors">
                 Let’s talk
-              </a>
+              </ScrollLink>
             </nav>
 
             <button onClick={() => setOpen(!open)} className="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2 text-white">
@@ -43,13 +44,13 @@ function Navbar() {
             <div className="md:hidden border-t border-white/10 px-4 py-3">
               <div className="flex flex-col gap-2">
                 {navItems.map((item) => (
-                  <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-white/90 hover:bg-white/10">
+                  <ScrollLink key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-white/90 hover:bg-white/10">
                     {item.label}
-                  </a>
+                  </ScrollLink>
                 ))}
-                <a href="#contact" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 bg-white text-slate-900 font-semibold text-center">
+                <ScrollLink href="#contact" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 bg-white text-slate-900 font-semibold text-center">
                   Let’s talk
-                </a>
+                </ScrollLink>
               </div>
             </div>
           )}

@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Work from './components/Work'
+import Process from './components/Process'
 import CTA from './components/CTA'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <Services />
         <Work />
+        <Process />
         <CTA />
       </main>
 

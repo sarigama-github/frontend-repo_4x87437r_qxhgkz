@@ -1,4 +1,6 @@
 import Spline from '@splinetool/react-spline'
+import { motion } from 'framer-motion'
+import ScrollLink from './ScrollLink'
 
 function Hero() {
   return (
@@ -8,7 +10,12 @@ function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-2xl"
+        >
           <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/20 backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
             <p className="text-xs text-white/80">AI-first social + content studio</p>
@@ -20,14 +27,14 @@ function Hero() {
             We craft scroll-stopping stories with algorithms and artistry. Strategy, production, and growth for brands that want to fly.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="#contact" className="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 px-5 py-3 text-sm font-semibold shadow hover:bg-blue-50">
+            <ScrollLink href="#contact" className="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 px-5 py-3 text-sm font-semibold shadow hover:bg-blue-50">
               Start a project
-            </a>
-            <a href="#work" className="inline-flex items-center justify-center rounded-xl bg-white/10 text-white px-5 py-3 text-sm font-semibold ring-1 ring-inset ring-white/20 hover:bg-white/20">
+            </ScrollLink>
+            <ScrollLink href="#work" className="inline-flex items-center justify-center rounded-xl bg-white/10 text-white px-5 py-3 text-sm font-semibold ring-1 ring-inset ring-white/20 hover:bg-white/20">
               See our work
-            </a>
+            </ScrollLink>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-950/20 to-slate-950" />
